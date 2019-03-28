@@ -1,0 +1,33 @@
+//noi luu tru css, js normal
+html
+	head
+		link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+		
+		link(href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic" rel="stylesheet")
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+	body
+		nav.navbar.navbar-expand-lg.navbar-light.bg-light
+				button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation")
+					span.navbar-toggler-icon
+				a.navbar-brand(href="/") Quy's Simple Blog
+				#navbarTogglerDemo03.collapse.navbar-collapse
+					ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+						li.nav-item.active
+							a.nav-link(href="/")
+								| Home 
+								span.sr-only (current)
+						li.nav-item
+							a.nav-link(href="/postmanager") Post manager
+						li.nav-item
+							a.nav-link.disabled(href="#") Disabled
+					//- form.form-inline.my-2.my-lg-0
+					//- 	input.form-control.mr-sm-2(type="search" placeholder="Search" aria-label="Search")
+					//- 	button.btn.btn-outline-success(type="submit") Search	
+				//- span Login as:  
+				//- 	if user
+				//- 		span.font-italic.font-weight-bold= user.username
+		.container.pt-5
+			block normal
