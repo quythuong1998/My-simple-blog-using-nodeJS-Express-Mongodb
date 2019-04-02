@@ -1,0 +1,11 @@
+extends ../layout/normal
+block normal
+	h1.display-4.font-italic.text-center.pt-3
+		span= posts.name
+	h3.font-weight-lighter.text-center Author: 
+			span=posts.author
+	p.blockquote.font-weight-lighter.pl-5.pt-3= posts.description
+
+	span.blockquote.font-weight-light.mt-10.ml-5= posts.content
+	
+

@@ -4,7 +4,7 @@ var postManagerRoute = express.Router();
 var postManagerController = require('../controllers/postManager.controller');
 
 
-postManagerRoute.get('/', postManagerController.index);
+//postManagerRoute.get('/', postManagerController.index);
 
 
 
