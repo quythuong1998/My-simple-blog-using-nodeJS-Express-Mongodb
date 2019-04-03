@@ -1,12 +1,11 @@
 require('dotenv').config();
-const express = require('express');
-const app = express();
-const port = 3000;
+var express = require('express');
+var app = express();
+var port = 3000;
+var cookieParser = require('cookie-parser');
+app.use(cookieParser(process.env.SESSION_SECRET)); //day la secret, dang ra phai generate mot chuoi ngau nhien nao no de vao day
 
-//thiet lap PUG - VIEW ENGINE
-app.set('view engine', 'pug');
-app.set('views', './views');
-app.use(express.static('public'));
+
 //connect database mongodb by mongoose
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true } ,  function (err) {
@@ -14,12 +13,28 @@ mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true } ,  function (er
     console.log('Successfully connected');
 })
 
+
+//thiet lap PUG - VIEW ENGINE
+app.set('view engine', 'pug');
+app.set('views', './views');
+app.use(express.static('public'));
+
+
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+
 //khu vuc require route:
-var postManagerRoute = require('./routers/postManager.route');
 var indexRoute = require('./routers/index.route');
+var authRoute = require('./routers/auth.route');
+var postManageRoute = require('./routers/postManage.route');
 
 app.use('/', indexRoute);
-app.use('/postmanager', postManagerRoute);
+app.use('/manage', postManageRoute);
+app.use('/auth', authRoute);
+
 
 
 

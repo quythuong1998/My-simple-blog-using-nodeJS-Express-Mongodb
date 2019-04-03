@@ -1,0 +1,19 @@
+extends ../layout/normal
+block normal
+    .row.justify-content-center.align-items-center.pt-5
+        
+
+        .col-md-5.p-4.mb-3.bg-light.rounded
+            if errors
+                each error in errors
+                    .alert.alert-danger= error
+
+            form(method="POST")
+                .form-group
+                    label(for="email").mb-1.text-muted User Name:
+                    input.form-control(name="username" type="username" value= valuesCurent ? valuesCurent.username : "")
+                .form-group
+                    label(for="password").mb-1.text-muted Password:
+                    input.form-control(name="password" type="password" value= valuesCurent ? valuesCurent.password : "")
+                button.btn.btn-outline-success.mt-3 LOGIN
+
