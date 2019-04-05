@@ -10,5 +10,10 @@ module.exports.index = function (req, res) {
     //
 }
 
+module.exports.newPost = function (req, res) {
+    
+    res.render('postManage/newPost');
+}
+
 
 

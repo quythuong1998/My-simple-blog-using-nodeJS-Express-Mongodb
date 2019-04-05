@@ -4,7 +4,7 @@ var app = express();
 var port = 3000;
 var cookieParser = require('cookie-parser');
 app.use(cookieParser(process.env.SESSION_SECRET)); //day la secret, dang ra phai generate mot chuoi ngau nhien nao no de vao day
-
+var jwt = require('jsonwebtoken');
 
 //connect database mongodb by mongoose
 var mongoose = require('mongoose');
@@ -30,9 +30,10 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 var indexRoute = require('./routers/index.route');
 var authRoute = require('./routers/auth.route');
 var postManageRoute = require('./routers/postManage.route');
+var requireAuth = require('./middlewares/requireAuth');
 
 app.use('/', indexRoute);
-app.use('/manage', postManageRoute);
+app.use('/manage', requireAuth.requireAuth, postManageRoute);
 app.use('/auth', authRoute);
 
 

@@ -24,7 +24,6 @@ module.exports.index = function(req, res) {
             post2Des: string2,                 
         })
   
-        //console.log(oneNewestPost);
     })
 }
 
@@ -34,7 +33,7 @@ module.exports.view = function (req, res) {
         res.render('post/view', {
             posts: p[0]
         })
-        console.log(p);
+        //console.log(p);
     })
 }
 
