@@ -9,7 +9,7 @@ block normal
                     .alert.alert-danger= error        
     .row
         .col-md-7       
-            form(action="/manage/newpost", method="POST")
+            form(action="/manage/newpost", method="POST" enctype="multipart/form-data")
                 .form-group.row
                     label Name:
                     input.form-control(name="name" type="text" value= values ? values.name : "")
@@ -19,7 +19,10 @@ block normal
                     input.form-control(name="description" type="text" value= values ? values.description : "")
                     label Content:
                     textarea.form-control(name="content", cols="30", rows="10" type="text" value= values ? values.content : "")
+                    label Image:
+                    input.form-control(name="image", type="file")
                     button.btn.btn-primary.mt-3 create
+
         .col-md-5
             .p-4.mb-3.bg-light.rounded
                 h4.font-italic.i.fas.fa-info  TIP: 

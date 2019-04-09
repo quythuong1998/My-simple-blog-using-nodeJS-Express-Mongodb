@@ -1,7 +1,7 @@
 var post = require('../models/post.model');
 
 module.exports.index = function (req, res) {
-    post.find().then(function (p) {
+    post.find().sort({_id: -1}).then(function (p) {
         
         res.render('postManage/index', {
             posts: p
@@ -21,7 +21,8 @@ module.exports.postPost = function (req, res){
         name: req.body.name,
         author: req.body.author,
         description: req.body.description,
-        content: req.body.content
+		content: req.body.content,
+		image: req.file.path.split('/').slice(1).join('/')
     });
 
     postDetails.save();
