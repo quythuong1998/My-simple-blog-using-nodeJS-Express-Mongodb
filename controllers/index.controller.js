@@ -7,7 +7,7 @@ module.exports.index = function(req, res) {
         // if(post[1].description)
         console.log(post[1].description.length);
         var string1;
-        
+        var string2;
         if(post[1].description.length > 200){
             string1 = post[1].description.slice(0, 115) + "...";
         }

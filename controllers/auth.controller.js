@@ -36,6 +36,7 @@ module.exports.login = function (req, res) {
         
         res.cookie('token', token);
         res.redirect('/manage/postmanage');
+        res.locals.user = isFinded;
     })
 }
 
