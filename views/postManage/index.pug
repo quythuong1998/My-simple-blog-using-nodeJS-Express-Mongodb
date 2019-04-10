@@ -7,8 +7,11 @@ block normal
     .container
         .row.mb-2
             each post in posts
-                .col-md-6
+                .col-md-12
                     .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+                        .col-4.d-lg-block
+                            img.h-100.w-auto.img-responsive.img-box.img-thumbnail.img-fluid(src="/" + post.image)
+                        
                         .col.p-4.d-flex.flex-column.position-static
                             //strong.d-inline-block.mb-2.text-primary World
                             h3.mb-0= post.name
@@ -16,5 +19,35 @@ block normal
                             .mb-1.text-muted=post.author  
                             p.card-text.mb-auto= post.description
                             a.stretched-link(href="/" + post._id) 
-                        .col-auto.d-none.d-lg-block
-                            img.h-100.w-auto.img-responsive(src="/" + post.image)
+
+    nav(aria-label="...")
+        if pages > 0
+            ul.pagination.justify-content-center
+                //trang dau
+                if currentPage == 1
+                    li.page-item.disabled
+                        a(aria-disabled="true").page-link First
+                else
+                    li.page-item
+                        a.page-link(href="/manage/postmanage?page=1") First
+                - var i = (Number(currentPage) > 3 ? Number(currentPage) - 1 : 1)
+                if (i !== 1)
+                    //li.page-item.disabled
+                        //a(aria-disabled="true").page-link ...
+                - for (; i <= (Number(currentPage) + 1) && i <= pages; i++) 
+                    if (i == currentPage)
+                        li.active
+                            a.page-link= i
+                    else
+                        li.page-item
+                            a.page-link(href="/manage/postmanage?page=" + i)= i 
+                    if (i == Number(currentPage) + 1 && i < pages)
+                        //li.page-item.disabled
+                            //a(aria-disabled="true").page-link ...
+                //trang cuoi			
+                if (currentPage == pages)
+                    li.page-item.disabled
+                            a(aria-disabled="true").page-link Last
+                else 
+                    li
+                        a.page-link(href="/manage/postmanage?page="+ pages) Last                        

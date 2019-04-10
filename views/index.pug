@@ -20,7 +20,7 @@ block normal
                             p.card-text.mb-auto= post1Des
                             a.stretched-link(href="/" + twoNewestPost1._id) 
                         .col-auto.d-none.d-lg-block
-                            img.w-100(src="https://loremflickr.com/200/250")
+                            img.h-100.w-auto.img-responsive.img-box.img-thumbnail.img-fluid(src="/" + twoNewestPost1.image)
                 .col-md-6
                     .row.no-gutters.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
                         .col.p-4.d-flex.flex-column.position-static
@@ -30,7 +30,7 @@ block normal
                             p.card-text.mb-auto= post2Des
                             a.stretched-link(href="/" + twoNewestPost2._id) 
                         .col-auto.d-none.d-lg-block
-                            img.w-100(src="https://loremflickr.com/200/250")
+                            img.h-100.w-auto.img-responsive.img-box.img-thumbnail.img-fluid(src="/" + twoNewestPost2.image)
                 
                 //main:
         .row
@@ -41,7 +41,7 @@ block normal
                         .card.mt-2
                             .row
                                 .col-md-4
-                                    img.w-100(src="https://loremflickr.com/200/250")
+                                    img.w-auto.img-responsive.img-box.img-thumbnail.img-fluid(src="/" + post.image)
                                 .col-md-8.px-3
                                     .card-block.px-3.pt-4
                                         h4.card-title= post.name 
@@ -54,6 +54,12 @@ block normal
                     p.mb-0
                         | Do you know? 
                         | This's my practice to learning nodeJS using Express, mongoDB.
+    
+
+
+
+
+
 
 //- table.table
 //-             tr

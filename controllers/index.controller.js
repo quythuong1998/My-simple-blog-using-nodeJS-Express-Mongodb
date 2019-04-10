@@ -3,6 +3,9 @@ var post = require('../models/post.model');
 
 module.exports.index = function(req, res) {
 
+    
+
+
     post.find().sort({_id: -1}).then(function (post) {
         // if(post[1].description)
         console.log(post[1].description.length);

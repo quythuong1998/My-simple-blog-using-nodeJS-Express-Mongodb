@@ -1,13 +1,24 @@
 var post = require('../models/post.model');
 
 module.exports.index = function (req, res) {
-    post.find().sort({_id: -1}).then(function (p) {
-        
-        res.render('postManage/index', {
-            posts: p
-        }); 
-    })
-    //
+	
+	var page = parseInt((req.query.page)) || 1; 
+	var postPerPage = 4;
+
+	var start = (page - 1) * postPerPage;
+	var end = page * postPerPage;
+
+
+	post.find().sort({_id: -1}).then(function(p){
+
+		res.render('postManage/index', {
+			posts: p.slice(start, end),
+			pages: Math.ceil(p.length/postPerPage),
+			currentPage: page
+		});
+	})
+
+    
 }
 
 module.exports.newPost = function (req, res) {
