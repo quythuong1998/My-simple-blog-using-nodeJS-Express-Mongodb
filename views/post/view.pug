@@ -6,6 +6,10 @@ block normal
 			span=posts.author
 	p.blockquote.font-weight-lighter.pl-5.pt-3= posts.description
 
+	.row.justify-content-center
+		.col-sm-8.pb-5
+			img.img-fluid.img-thumbnail(src="/" + posts.image)
+	
 	span.blockquote.font-weight-light.mt-10.ml-5= posts.content
 	
 
