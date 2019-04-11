@@ -4,7 +4,8 @@ var postSchema = new mongoose.Schema({
 	author: String,
 	description: String,
 	content: String,
-	image: String
+	image: String,
+	date: Date
 });
 
 var post = mongoose.model('Post', postSchema, 'post');

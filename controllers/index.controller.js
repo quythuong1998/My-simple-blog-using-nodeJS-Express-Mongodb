@@ -12,25 +12,25 @@ module.exports.index = function(req, res) {
 
 
 	post.find().sort({_id: -1}).then(function(p){
-        var string1;
-        var string2;
-        if(p[1].description.length > 200){
-            string1 = p[1].description.slice(0, 115) + "...";
-        }
-        if(p[2].description.length > 200){
-            string2 = p[2].description.slice(0, 115) + "...";
-        }
+        // var string1;
+        // var string2;
+        // if(p[1].description.length > 200){
+        //     string1 = p[1].description.slice(0, 115) + "...";
+        // }
+        // if(p[2].description.length > 200){
+        //     string2 = p[2].description.slice(0, 115) + "...";
+        // }
 
 		res.render('index', {
 			posts: p.slice(start, end),
 			pages: Math.ceil(p.length/postPerPage),
             currentPage: page,
 
-            oneNewestPost: p[0],
-            twoNewestPost1: p[1],
-            post1Des: string1, 
-            twoNewestPost2: p[2],
-            post2Des: string2,  
+             oneNewestPost: p[0],
+            // twoNewestPost1: p[1],
+            // post1Des: string1, 
+            // twoNewestPost2: p[2],
+            // post2Des: string2,  
 		});
 	})
 }

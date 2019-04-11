@@ -33,7 +33,8 @@ module.exports.postPost = function (req, res){
         author: req.body.author,
         description: req.body.description,
 		content: req.body.content,
-		image: req.file.path.split('/').slice(1).join('/')
+		image: req.file.path.split('/').slice(1).join('/'),
+		date: new Date()
     });
 
     postDetails.save();
