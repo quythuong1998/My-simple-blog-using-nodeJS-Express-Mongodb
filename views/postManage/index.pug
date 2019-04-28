@@ -1,5 +1,13 @@
-extends ../layout/normal
+extends ../layout/normal2
 block normal
+    .col-md-12
+        h3.pb-4.mb-4.font-italic.border-bottom.pt-3
+            |All Category
+            a.btn.btn-primary(href="/manage/newcategory").ml-3 new Category
+        each c in categoris
+            a.btn.btn-outline-primary.m-1(href="/manage/category/" + c.id)= c.name
+             
+
     .col-md-12
         h3.pb-4.mb-4.font-italic.border-bottom.pt-3
             |All blog posts form heart |

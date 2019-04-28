@@ -5,6 +5,10 @@ var postSchema = new mongoose.Schema({
 	description: String,
 	content: String,
 	image: String,
+	category: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Category'
+	},
 	date: Date
 });
 

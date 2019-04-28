@@ -58,29 +58,9 @@ html
 						span.navbar-toggler-icon
 					#navbarNav.collapse.navbar-collapse.justify-content-center
 						ul.navbar-nav
-							li.nav-item
-								a.nav-link(href="#") World
-							li.nav-item
-								a.nav-link(href="#") U.S.
-							li.nav-item
-								a.nav-link(href="#") Technology
-							li.nav-item
-								a.nav-link(href="#") Design
-							li.nav-item
-								a.nav-link(href="#") Culture
-							li.nav-item
-								a.nav-link(href="#") Business
-							li.nav-item
-								a.nav-link(href="#") Politics
-							li.nav-item
-								a.nav-link(href="#") Opinion
-							li.nav-item
-								a.nav-link(href="#") Science
-							li.nav-item
-								a.nav-link(href="#") Health
-							li.nav-item
-								a.nav-link(href="#") Style
-							li.nav-item
-								a.nav-link(href="#") Travel
+							each c in cate
+								li.nav-item
+									a.nav-link(href="#")= c.name
+							
 
 			block normal

@@ -1,0 +1,55 @@
+//noi luu tru css, js normal
+html
+	head
+		link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+		
+		link(href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C400italic%2C600%2C700%2C700italic%7COswald%3A400%2C300%7CVollkorn%3A400%2C400italic" rel="stylesheet")
+
+		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
+		
+		script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+		
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+		
+		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+		
+		link(rel="stylesheet" href="/head.css")
+
+	body
+		//- nav.navbar.navbar-expand-lg.navbar-light.bg-light
+		//- 		button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation")
+		//- 			span.navbar-toggler-icon
+		//- 		a.navbar-brand(href="/") Quy's Simple Blog
+		//- 		#navbarTogglerDemo03.collapse.navbar-collapse
+		//- 			ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+		//- 				li.nav-item.active
+		//- 					a.nav-link(href="/")
+		//- 						| Home 
+		//- 						span.sr-only (current)
+		//- 				li.nav-item
+		//- 					a.nav-link(href="/postmanager") Post manager
+		//- 				li.nav-item
+		//- 					a.nav-link.disabled(href="#") Disabled
+		//- 			//- form.form-inline.my-2.my-lg-0
+		//- 			//- 	input.form-control.mr-sm-2(type="search" placeholder="Search" aria-label="Search")
+		//- 			//- 	button.btn.btn-outline-success(type="submit") Search	
+		//- 		//- span Login as:  
+		//- 		//- 	if user
+		//- 		//- 		span.font-italic.font-weight-bold= user.username
+		.container
+			header.blog-header.py-3
+				.row.flex-nowrap.justify-content-between.align-items-center
+					.col-4.pt-1
+						a.text-muted(href="#") About
+						||
+						a.text-muted(href="#") Contact
+					.col-4.text-center
+						a.blog-header-logo.text-dark(href="/") My Simple Blog
+					.col-4.d-flex.justify-content-end.align-items-center
+						a.text-muted(href="#")
+							svg.mx-3(xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+								circle(cx="10.5" cy="10.5" r="7.5")
+								line(x1="21" y1="21" x2="15.8" y2="15.8")
+							
+
+			block normal

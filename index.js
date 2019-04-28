@@ -22,8 +22,8 @@ app.use(express.static('public'));
 
 
 var bodyParser = require('body-parser');
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(bodyParser.json()); // for parsing applicatiojson
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencodedn/
 
 
 //khu vuc require route:
@@ -31,9 +31,10 @@ var indexRoute = require('./routers/index.route');
 var authRoute = require('./routers/auth.route');
 var postManageRoute = require('./routers/postManage.route');
 var requireAuth = require('./middlewares/requireAuth');
+var loadcategory = require('./middlewares/loadCategory');
 
-app.use('/', indexRoute);
-app.use('/manage', requireAuth.requireAuth, postManageRoute);
+app.use('/', loadcategory.loadCaterogy, indexRoute);
+app.use('/manage', requireAuth.requireAuth, loadcategory.loadCaterogy, postManageRoute, );
 app.use('/auth', authRoute);
 
 

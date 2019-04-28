@@ -1,4 +1,4 @@
-extends ../layout/normal
+extends ../layout/normal2
 block normal
     .col-md-12
         h3.pb-4.mb-4.font-italic.border-bottom.pt-3
@@ -17,10 +17,14 @@ block normal
                     input.form-control(name="author" type="text" value= values ? values.author : "")
                     label Description:
                     input.form-control(name="description" type="text" value= values ? values.description : "")
+                    label Category:
+                    select.form-control(name="category")
+                        each cate in categoris
+                            option(value=cate.id)= cate.name
                     label Content:
                     textarea.form-control(name="content", cols="30", rows="10" type="text" value= values ? values.content : "")
                     label Image:
-                    input.form-control(name="image", type="file")
+                    input.form-control(name="image", type="file")       
                     button.btn.btn-primary.mt-3 create
 
         .col-md-5

@@ -12,4 +12,10 @@ postManageRoute.post('/newpost',
     postManageController.postValidation,
     postManageController.postPost);
 
+postManageRoute.get('/newcategory', postManageController.newCategory);
+postManageRoute.post('/newcategory', postManageController.categoryValidation, postManageController.postNewCategory);
+
+postManageRoute.get('/category/:id', postManageController.getPostByCategory);
+
+
 module.exports = postManageRoute;
